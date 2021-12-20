@@ -16,9 +16,9 @@ public void TestInvoiceGenerator() {
 @Test
 public void TestReturnFare() {
 	
-	double Fare = cabInvoiceGenerator.CalculateFare(2.0,5.0);
+	double Fare = cabInvoiceGenerator.CalculateFare(3.2,4.0);
 	
-	assertEquals(Fare, 25.0,0.0);
+	assertEquals(Fare, 36.0,0.0);
 }
 @Test
 public void TestReturnMinimumFare() {
