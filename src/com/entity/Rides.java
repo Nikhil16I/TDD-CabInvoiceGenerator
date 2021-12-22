@@ -1,4 +1,4 @@
-package com.CabInvoiceGenerator;
+package com.entity;
 
 public class Rides {
 	double Time;
@@ -6,8 +6,8 @@ public class Rides {
 
 	public Rides(double time, double distance) {
 		super();
-		Time = time;
-		Distance = distance;
+		this.Time = time;
+		this.Distance = distance;
 	}
 
 	public double getTime() {
