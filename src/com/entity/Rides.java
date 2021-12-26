@@ -1,29 +1,21 @@
 package com.entity;
 
 public class Rides {
-	double Time;
-	double Distance;
+	double time;
+	double distance;
 
-	public Rides(double time, double distance) {
+	public Rides(double distance, double time) {
 		super();
-		this.Time = time;
-		this.Distance = distance;
+		this.time = time;
+		this.distance = distance;
 	}
 
 	public double getTime() {
-		return Time;
+		return time;
 	}
-
-	/*
-	 * public void setTime(double time) { Time = time; }
-	 */
 
 	public double getDistance() {
-		return Distance;
+		return distance;
 	}
-
-	/*
-	 * public void setDistance(double distance) { Distance = distance; }
-	 */
 
 }

@@ -1,37 +1,35 @@
 package com.services;
 
-
-import java.util.Iterator;
-
 import com.entity.InvoiceData;
 import com.entity.Rides;
 
 public class CabInvoiceGenerator {
-	
-	static int  MinimumFare = 5;
 
-	static final double CostPerKM = 10.0;
-	static final int CostPerMIN = 1;
-	
-	public double CalculateFare(double Distance, double Time) {
+	private static final double CostPerMIN = 1.0;
+	private static final double CostPerKM = 10.0;
+	private static final double MinimumFare = 5.0;
 
-		double TotalFare = ((Distance * CostPerKM) + (Time * CostPerMIN));
-		if (TotalFare < 5) {
-			System.out.println("Minimun Fare Should not less than Rs.5 ");
+	public double CalculateFare(double distance, int time) {
+		// TODO Auto-generated method stub
+		double totalFare = distance * CostPerKM + time * CostPerMIN;
+		if (totalFare < 5.0) {
 			return MinimumFare;
 		}
-		return TotalFare;
+		return totalFare;
+
 	}
 
-	public static InvoiceData CalculateFareMultipleRides(Rides[] rides) {
+	public InvoiceData CalculateFareMultipleRides(Rides[] rides) {
 		// TODO Auto-generated method stub
-		double TotalFare =0;
+		double totalFare = 0;
 		for (int i = 0; i < rides.length; i++) {
-			Rides rides2=rides[i];
-			double newFare=((rides2.getDistance()*CostPerKM)+(rides2.getTime()*CostPerMIN));
-			TotalFare += newFare;
-		} 
-		return new InvoiceData(rides.length,TotalFare);
-	}
-}
+			Rides ride = rides[i];
+			double newfare = ride.getDistance() * CostPerKM + ride.getTime() * CostPerMIN;
+			System.out.println(newfare);
+			totalFare += newfare;
 
+		}
+		return new InvoiceData(rides.length, totalFare);
+	}
+
+}
