@@ -5,6 +5,10 @@ public class InvoiceData {
 	int total_Number_OfRide;
 	double total_Fare;
 	double averageFare_PerRide;
+	public InvoiceData getinvoicedata() {
+		this.averageFare_PerRide = this.total_Fare / this.total_Number_OfRide;
+		return this;
+	};
 
 	public InvoiceData(int total_Number_OfRide, double total_Fare) {
 		this.total_Number_OfRide = total_Number_OfRide;
@@ -27,5 +31,6 @@ public class InvoiceData {
 				&& Double.compare(averageFare_PerRide, averageFare_PerRide) == 0;
 
 	}
+
 
 }
